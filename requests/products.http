@@ -1,0 +1,42 @@
+@baseUrl = http://localhost:3000/api/v1
+@token = {{token}}
+
+### 1) Ping inicial (endpoint actual en Nest)
+GET {{baseUrl}}/
+Accept: application/json
+
+### 2) Ejemplo con auth bearer (deja @token en settings)
+GET {{baseUrl}}/profile
+Authorization: Bearer {{token}}
+Accept: application/json
+
+### 3) Plantilla CRUD para Products (ajusta rutas segun tu controller)
+GET {{baseUrl}}/productos
+Accept: application/json
+
+###
+GET {{baseUrl}}/productos/1
+Accept: application/json
+
+###
+POST {{baseUrl}}/productos
+Content-Type: application/json
+
+{
+  "name": "Mouse Logitech",
+  "price": "39.99",
+  "createdAt": "2024-06-01T12:00:00Z"
+}
+
+###
+PATCH {{baseUrl}}/products/1
+Content-Type: application/json
+
+{
+  "price": 34.99,
+  "stock": 20
+}
+
+###
+DELETE {{baseUrl}}/products/1
+Accept: application/json

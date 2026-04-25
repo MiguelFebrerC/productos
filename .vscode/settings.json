@@ -1,0 +1,24 @@
+{
+    "rest-client.environmentVariables": {
+        "$shared": {
+            "host": "localhost",
+            "port": 3000,
+            "baseUrl": "http://{{host}}:{{port}}",
+            "token": ""
+        },
+        "local": {
+            "host": "localhost",
+            "port": 3000,
+            "baseUrl": "http://{{host}}:{{port}}",
+            "token": ""
+        },
+        "des": {
+            "baseUrl": "https://api-des.tu-dominio.com",
+            "token": ""
+        }
+    },
+    "rest-client.defaultHeaders": {
+        "User-Agent": "vscode-rest-client"
+    },
+    "rest-client.enableTelemetry": false
+}
