@@ -15,7 +15,7 @@ GET {{baseUrl}}/productos
 Accept: application/json
 
 ###
-GET {{baseUrl}}/productos/1
+GET {{baseUrl}}/productos/1006dcf1-d1e7-45be-9b61-80154b1ec40d
 Accept: application/json
 
 ###
@@ -24,8 +24,7 @@ Content-Type: application/json
 
 {
   "name": "Mouse Logitech",
-  "price": "39.99",
-  "createdAt": "2024-06-01T12:00:00Z"
+  "price": "39.99"
 }
 
 ###
@@ -38,5 +37,5 @@ Content-Type: application/json
 }
 
 ###
-DELETE {{baseUrl}}/products/1
+DELETE {{baseUrl}}/c068c397-eefc-4c51-9b2a-08b93300bab5
 Accept: application/json

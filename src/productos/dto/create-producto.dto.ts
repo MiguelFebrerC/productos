@@ -3,17 +3,13 @@ import { IsString, IsNumber, IsOptional, IsDate } from 'class-validator';
 
 export class CreateProductoDto {
     @IsString()
-    public name: string;
-
-    @IsString()
-    @IsOptional()
-    public description: string;
+    public name!: string;
 
     @IsNumber()
     @Transform(({ value }) => parseFloat(value))
-    public price: number;
+    public price!: number;
 
-    @IsDate()
-    @Transform(({ value }) => new Date(value))
-    public createdAt: Date;
+    @IsString()
+    @IsOptional()
+    public description?: string;
 }
