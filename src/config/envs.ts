@@ -1,17 +1,23 @@
 import 'dotenv/config';
-
 import * as joi from 'joi';
 
-// const envSchema = joi.object({
-//     PORT: joi.number().required().default(3000),
-// }).unknown(true);
+interface Envs {
+    PORT: number;
+}
 
-// const { error, value } = envSchema.validate(process.env);
+const envValidationSchema = joi.object({
+    PORT: joi.number().required().default(3000),
+}).unknown(true);
 
-// if (error) {
-//     throw new Error(`Invalid environment variables: ${error.message}`);
-// }
+const { error, value } = envValidationSchema.validate(process.env);
 
-export const envs = {
-    PORT: process.env.PORT,
+if (error) {
+    console.error('Config validation error:', error.message);
+    process.exit(1);
+}
+
+const ensVars: Envs = value;
+
+export const envs: Envs = {
+    PORT: ensVars.PORT,
 };
